@@ -1,0 +1,10 @@
+04579e6 HEAD@{0}: merge homework_01: Fast-forward
+336485a HEAD@{1}: checkout: moving from homework_01 to master
+04579e6 HEAD@{2}: commit (merge): Resolve merge conflict in A.txt, keep content 'b'
+fbd3b3e HEAD@{3}: commit: Update A.txt content to 'c'
+cb82556 HEAD@{4}: checkout: moving from homework_01_b to homework_01
+3792cd1 HEAD@{5}: commit: Update A.txt content to 'b'
+cb82556 HEAD@{6}: checkout: moving from homework_01 to homework_01_b
+cb82556 HEAD@{7}: commit: Add A.txt with content 'a'
+336485a HEAD@{8}: checkout: moving from master to homework_01
+336485a HEAD@{9}: commit (initial): Init commit with README.md and .gitignore
