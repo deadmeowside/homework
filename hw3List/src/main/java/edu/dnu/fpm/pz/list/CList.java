@@ -26,24 +26,15 @@ public class CList<T> implements AbstractList<T> {
     }
 
     @Override
-    public T get(int index) {
-        try {
-            Validator.validateIndex(index, size);
-            return elements[index];
-        } catch (ListException e) {
-            System.out.println(e);
-            return null;
-        }
+    public T get(int index) throws ListException {
+        Validator.validateIndex(index, size);
+        return elements[index];
     }
 
     @Override
-    public void set(int index, T element) {
-        try {
-            Validator.validateIndex(index, size);
-            elements[index] = element;
-        } catch (ListException e) {
-            System.out.println(e);
-        }
+    public void set(int index, T element) throws ListException {
+        Validator.validateIndex(index, size);
+        elements[index] = element;
     }
 
     @Override
@@ -53,30 +44,21 @@ public class CList<T> implements AbstractList<T> {
     }
 
     @Override
-    public void push_back(int index, T element) {
-        try {
-            Validator.validateIndex(index, size + 1);
-            resize();
-            System.arraycopy(elements, index, elements, index + 1, size - index);
-            elements[index] = element;
-            size++;
-        } catch (ListException e) {
-            System.out.println(e);
-        }
+    public void push_back(int index, T element) throws ListException {
+        Validator.validateIndex(index, size + 1);
+        resize();
+        System.arraycopy(elements, index, elements, index + 1, size - index);
+        elements[index] = element;
+        size++;
     }
 
     @Override
-    public T remove(int index) {
-        try {
-            Validator.validateIndex(index, size);
-            T removedElement = elements[index];
-            System.arraycopy(elements, index + 1, elements, index, size - index - 1);
-            elements[--size] = null;
-            return removedElement;
-        } catch (ListException e) {
-            System.out.println(e);
-            return null;
-        }
+    public T remove(int index) throws ListException {
+        Validator.validateIndex(index, size);
+        T removedElement = elements[index];
+        System.arraycopy(elements, index + 1, elements, index, size - index - 1);
+        elements[--size] = null;
+        return removedElement;
     }
 
     private void resize() {
