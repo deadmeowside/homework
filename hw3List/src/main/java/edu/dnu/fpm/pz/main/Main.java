@@ -5,7 +5,7 @@ import edu.dnu.fpm.pz.list.CList;
 
 public class Main {
 
- public static AbstractList<String> getList() {
+    public static AbstractList<String> getList() {
         return new CList<>(1);
     }
 
