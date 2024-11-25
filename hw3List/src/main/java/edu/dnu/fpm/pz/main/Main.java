@@ -5,8 +5,12 @@ import edu.dnu.fpm.pz.list.CList;
 
 public class Main {
 
+ public static AbstractList<String> getList() {
+        return new CList<>(1);
+    }
+
     public static void main(String[] args) {
-        AbstractList<String> list = new CList<>(1);
+        AbstractList<String> list = getList();
 
         try {
             list.push_back("hello");
