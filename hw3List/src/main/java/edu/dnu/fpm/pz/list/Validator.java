@@ -4,14 +4,23 @@ public class Validator {
 
     public static void validateIndex(int index, int size) throws ListException {
         if (index < 0 || index >= size) {
-            throw new ListException(CList.class.toString(), "IndexOutOfBounds", "Індекс виходить за межі списку.");
+            throw new ListException(
+                CList.class.toString(),
+                "IndexOutOfBounds",
+                "Індекс виходить за межі списку.",
+                index
+            );
         }
     }
 
     public static void validateNotEmpty(boolean isEmpty) throws ListException {
         if (isEmpty) {
-            throw new ListException(CList.class.toString(), "EmptyList", "Список порожній.");
+            throw new ListException(
+                CList.class.toString(),
+                "EmptyList",
+                "Список порожній.",
+                null
+            );
         }
     }
-
 }
